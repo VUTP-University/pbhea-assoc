@@ -178,4 +178,5 @@ cython_debug/
 
 # Ignore local files
 /backend/programs.xlsx
+.DS_Store
 
