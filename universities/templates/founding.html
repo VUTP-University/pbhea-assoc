@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Founding Institutions{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-0" style="background-color: #1e2a38;">
+  <div class="container py-5">
+
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 text-center mb-3 mb-md-0">
+        <img src="{% static 'img/LOGO_PBHEA.png' %}" 
+             alt="PBHEA Logo" 
+             class="img-fluid rounded shadow-sm"
+             style="max-width: 200px;">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-light text-center">
+        <h2 class="fw-bold mb-3">Founding Institutions</h2>
+        <p style="font-size: 1.1rem;">
+          The Association “Positioning Bulgarian Higher Education Abroad” (PBHEA) was founded by four leading academic institutions in Bulgaria, each with a strong international profile and a commitment to excellence in education and research.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+
+      <!-- 1. UTP -->
+      <div class="col-md-6">
+        <div class="px-3 py-1 border rounded-4 shadow-sm bg-light h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-primary mb-0">
+              🌐 1. University of Telecommunications and Post (UTP), Sofia
+            </h5>
+            <img src="{% static 'img/logo_utp_en.png' %}" 
+                 alt="UTP Logo" 
+                 style="max-height: 100px;">
+          </div>
+          <ul class="mb-3 ps-3">
+            <li>A modern university specializing in digital leadership, cybersecurity, logistics, and smart technologies.</li>
+            <li>Actively involved in innovation, entrepreneurship, and cooperation with business and government.</li>
+            <li>Known for international partnerships and EU project participation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. Mining and Geology -->
+      <div class="col-md-6">
+        <div class="px-3 py-1 border rounded-4 shadow-sm bg-light h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-primary mb-0">
+              🏛️ 2. University of Mining and Geology “St. Ivan Rilski”, Sofia
+            </h5>
+            <img src="{% static 'img/logo_mgu.png' %}" 
+                 alt="UMG Logo" 
+                 style="max-height: 100px;">
+          </div>
+          <ul class="mb-3 ps-3">
+            <li>Expertise in mining, geology, energy, and environmental protection.</li>
+            <li>Pioneer in geoscience education and applied research.</li>
+            <li>Focus on sustainable development and digital transformation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. Medical University of Pleven -->
+      <div class="col-md-6">
+        <div class="px-3 py-1 border rounded-4 shadow-sm bg-light h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-primary mb-0">
+              🔬 3. Medical University of Pleven
+            </h5>
+            <img src="{% static 'img/download.jpg' %}" 
+                 alt="MU Pleven Logo" 
+                 style="max-height: 100px;">
+          </div>
+          <ul class="mb-3 ps-3">
+            <li>One of the most advanced medical universities in Southeast Europe.</li>
+            <li>English-taught programs in Medicine and Healthcare.</li>
+            <li>Recognized for robotic surgery training and digital health research.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Agricultural University -->
+      <div class="col-md-6">
+        <div class="px-3 py-1 border rounded-4 shadow-sm bg-light h-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold text-primary mb-0">
+              🎓 4. Agricultural University – Plovdiv
+            </h5>
+            <img src="{% static 'img/au-logo.jpg' %}" 
+                 alt="AU Logo" 
+                 style="max-height: 100px;">
+          </div>
+          <ul class="mb-3 ps-3">
+            <li>The leading agricultural higher education institution in Bulgaria.</li>
+            <li>Focus on biotechnology, agribusiness, climate-smart agriculture.</li>
+            <li>Promotes mobility, green transition, and food innovation.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Buttons -->
+    <div class="container mt-4">
+      <div class="bg-warning py-3 px-3 rounded-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-stretch gap-2">
+          <a href="{% url 'home' %}" class="btn btn-dark flex-fill rounded-pill px-4 py-2 text-nowrap">HOME</a>
+         
+        </div>
+      </div>
+
+      <div class="position-relative w-100 mt-3" style="max-height: 230px; max-width: 900px; margin: -3px auto 0 auto;">
+        <div id="bachelor-section" class="info-section bg-[#1e2a38] border border-light rounded-4 shadow-sm p-4 mt-2">
+          <div class="row align-items-center text-center text-light">
+            <div class="col-md-4 mb-3 mb-md-0">
+              <img src="{% static 'img/LOGO_PBHEA.png' %}" alt="PBHEA Logo" class="img-fluid rounded" style="max-width: 150px;">
+            </div>
+            <div class="col-md-8">
+              <h5 class="fw-bold mb-3">Admission Documents</h5>
+              <p>Application form - completed, printed from the e-application system, and signed by the applicant.</p>
+              <a href="#" class="btn btn-primary rounded-pill">Computer technologies</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="master-section" class="info-section bg-[#1e2a38] border border-light rounded-4 shadow-sm p-4 mt-2">
+          <div class="row align-items-center text-center text-light">
+            <div class="col-md-4 mb-3 mb-md-0">
+              <img src="{% static 'img/LOGO_PBHEA.png' %}" alt="PBHEA Logo" class="img-fluid rounded" style="max-width: 150px;">
+            </div>
+            <div class="col-md-8">
+              <h5 class="fw-bold mb-3">Admission Documents: Required Documents:</h5>
+              <p>Please provide your bachelor's diploma, transcript of records, and proof of language proficiency.</p>
+              <a href="#" class="btn btn-primary rounded-pill">Learn more</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="contacts-section" class="info-section bg-[#1e2a38] border border-light rounded-4 shadow-sm p-4 mt-2" style="max-width: 500px;">
+          <div class="row text-center text-light">
+            <div class="col-12">
+              <h5 class="fw-bold mb-3">📬 Need Assistance?</h5>
+              <p class="mb-1">For questions or guidance, contact us at:</p>
+              <p class="mb-0">📧 <a href="mailto:admissions@utp.bg" class="text-light text-decoration-underline">admissions@utp.bg</a></p>
+              <p>📞 +359 2 123 4567</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<style>
+  .info-section {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 900px;
+    width: 100%;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    margin-top: -3px;
+  }
+
+  .info-section.show {
+    max-height: 1000px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #contacts-section {
+    max-width: 500px;
+  }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    const sections = {
+      '#btn-bachelor': '#bachelor-section',
+      '#btn-master': '#master-section',
+      '#btn-contacts': '#contacts-section'
+    };
+
+    $.each(sections, function (button, section) {
+      $(button).on('click', function () {
+        $.each(sections, function (_, sec) {
+          if (sec === section) {
+            $(sec).toggleClass('show');
+            if ($(sec).hasClass('show')) {
+              $('html, body').animate({
+                scrollTop: $(sec).offset().top
+              }, 600);
+            }
+          } else {
+            $(sec).removeClass('show');
+          }
+        });
+      });
+    });
+  });
+</script>
+{% endblock %}

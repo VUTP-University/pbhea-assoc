@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Welcome to PBHEA{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-1 p-0" style="background-color: #1e2a38;">
+  <div class="container-fluid py-5">
+
+  
+    <div class="row justify-content-center align-items-stretch g-0">
+    
+      <div class="col-md-5 d-flex align-items-stretch mb-4 mb-md-0">
+        <div class="w-100 border border-light rounded-4 shadow-lg p-4 d-flex align-items-center justify-content-center">
+          <img src="{% static 'img/LOGO_PBHEA.png' %}" alt="PBHEA Logo" class="img-fluid rounded-4" style="max-width: 100%; max-height: 400px;">
+        </div>
+      </div>
+
+      <!-- Dynamic content area -->
+      <div class="col-md-7 d-flex align-items-stretch">
+        <div class="border rounded-4 shadow-sm p-4 d-flex flex-column justify-content-start w-100 position-relative" style="color: #ced4da;">
+
+          <!-- Dropdown menu arrow -->
+          <div class="dropdown text-end mb-3">
+            <button class="btn btn-outline-light dropdown-toggle rounded-pill" type="button" id="programSelect" data-bs-toggle="dropdown" aria-expanded="false">
+              Select Programme
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="programSelect">
+              <li><a class="dropdown-item" href="#" data-target="home">Home</a></li>
+              <li><a class="dropdown-item" href="#" data-target="bachelor">Bachelor Programmes</a></li>
+              <li><a class="dropdown-item" href="#" data-target="master">Master Programmes</a></li>
+              <li><a class="dropdown-item" href="#" data-target="contacts">Contacts</a></li>
+            </ul>
+          </div>
+
+          <!-- Dynamic content goes here -->
+          <div id="dynamic-text">
+             <h2 class="text-center mb-4 fw-bold text-white">Welcome to PBHEA</h2>
+    <p class="lead text-center text-white">The Association “Positioning Bulgarian Higher Education Abroad” (PBHEA) was established with the mission to promote and enhance the prestige and quality of Bulgarian higher education on the international stage.</p>
+    <p class="text-center text-white">We unite the efforts of leading Bulgarian higher education institutions and their partners to:</p>
+    <ul class="text-center list-unstyled fw-medium text-white">
+      <li>➤ Build a positive and recognizable image of Bulgaria as an educational destination</li>
+      <li>➤ Support the export of Bulgarian higher education through international programs and initiatives</li>
+      <li>➤ Facilitate the attraction of international students and the creation of academic partnerships</li>
+      <li>➤ Actively participate in national and European policies in the field of education and science</li>
+    </ul>
+    <p class="text-center mt-4 text-white">The association is an independent and expert platform serving as a bridge between higher education, government institutions, business, and international partners.</p>
+    <p class="text-center text-white"><strong>Our vision:</strong> for Bulgaria to become a global leader in accessible, high-quality, and innovative higher education.</p>
+    <div class="text-center mt-4">
+      <p class="text-center text-white">Join us in this mission!</p>
+    </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="row mt-4 g-0">
+      <div class="col-12 p-0">
+        <div class="d-flex justify-content-between bg-warning rounded-4 p-3 gap-2 flex-wrap" id="nav-buttons">
+          <a href="{%url 'founding'%}" class="btn btn-dark flex-fill rounded-pill">FOUNDING</a>
+          <a href="javascript:void(0);" id="btn-bachelor" class="btn btn-dark flex-fill rounded-pill">BACHELOR PROGRAMMES</a>
+          <a href="javascript:void(0);" id="btn-master" class="btn btn-dark flex-fill rounded-pill">MASTER PROGRAMMES</a>
+          <a  class="btn btn-dark flex-fill rounded-pill">DOCTORAL STUDIES</a>
+          <a href="javascript:void(0);" id="btn-contacts" class="btn btn-dark flex-fill rounded-pill">CONTACTS</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dynamicText = document.getElementById('dynamic-text');
+ const contentMap = {
+  home: `
+    <h2 class="text-center mb-4 fw-bold text-white">Welcome to PBHEA</h2>
+    <p class="lead text-center text-white">The Association “Positioning Bulgarian Higher Education Abroad” (PBHEA) was established with the mission to promote and enhance the prestige and quality of Bulgarian higher education on the international stage.</p>
+    <p class="text-center text-white">We unite the efforts of leading Bulgarian higher education institutions and their partners to:</p>
+    <ul class="text-center list-unstyled fw-medium text-white">
+      <li>➤ Build a positive and recognizable image of Bulgaria as an educational destination</li>
+      <li>➤ Support the export of Bulgarian higher education through international programs and initiatives</li>
+      <li>➤ Facilitate the attraction of international students and the creation of academic partnerships</li>
+      <li>➤ Actively participate in national and European policies in the field of education and science</li>
+    </ul>
+    <p class="text-center mt-4 text-white">The association is an independent and expert platform serving as a bridge between higher education, government institutions, business, and international partners.</p>
+    <p class="text-center text-white"><strong>Our vision:</strong> for Bulgaria to become a global leader in accessible, high-quality, and innovative higher education.</p>
+    <div class="text-center mt-4">
+      <p class="text-center text-white">Join us in this mission!</p>
+    </div>
+  `,
+
+  bachelor: `
+    <h2 class="text-center mb-4 fw-bold text-white">Bachelor Programmes - Admission Documents</h2>
+    <ul class="list-unstyled fw-medium text-white">
+      <li>➤ Application form - completed, printed from the e-application system, and signed by the applicant.</li>
+      <li>➤ Validation of secondary education certificate, issued by the Regional Department of the Ministry of Education.</li>
+      <li>➤ A secondary-school-leaving certificate including marks in Biology and Chemistry (min. 62% of max score).</li>
+      <li>➤ Certificate of eligibility to enter university in the applicant's home country, translated and legalized.</li>
+      <li>➤ Name change document (if applicable), translated and legalized.</li>
+      <li>➤ Four (4) recently taken color passport-sized photos.</li>
+      <li>➤ Copy of ID or international passport.</li>
+      <li>➤ English language certificate at B2 level or higher (if from non-English-speaking country).</li>
+    </ul>
+    <a>
+    <p class="text-center mt-3 text-white"><strong>Note:</strong> Validation may take up to 1 month. Follow legalization requirements strictly.</p>
+  `,
+
+  master: `
+    <h2 class="text-center mb-4 fw-bold text-white">Master Programmes - Required Documents</h2>
+    <ul class="list-unstyled fw-medium text-white">
+      <li>➤ Application form (template provided)</li>
+      <li>➤ Copy of higher education diploma and transcript — translated and legalized</li>
+      <li>➤ Official recognition from NACID: <a href="https://nacid.bg/bg/foreign_qualifications_in_bulgaria_b_m/info/" target="_blank" class="text-white text-decoration-underline">nacid.bg</a></li>
+      <li>➤ Language certificate: B2 in Bulgarian or equivalent in foreign language</li>
+      <li>➤ Copy of identity document (passport)</li>
+      <li>➤ Copy of citizenship documents (if dual citizenship)</li>
+      <li>➤ Two passport-sized photos</li>
+      <li>➤ Proof of payment of application fee</li>
+      <li>➤ Documents must be legalized, translated, and certified per Bulgarian/international law</li>
+    </ul>
+    <p class="text-center mt-3 text-white">If the applicant doesn’t speak Bulgarian, a preparatory course is required. Tuition fees are set annually.</p>
+  `,
+
+  contacts: `
+    <h2 class="text-center mb-4 fw-bold text-white">📬 Contact Us</h2>
+    <ul class="list-unstyled text-center fw-medium text-white">
+      <li>➤ Email: <a href="mailto:admissions@utp.bg" class="text-white text-decoration-underline">admissions@utp.bg</a></li>
+      <li>➤ Phone: +359 2 123 4567</li>
+      <li>➤ Office hours: Mon–Fri, 9:00–17:00</li>
+    </ul>
+  `
+};
+
+
+    function setContent(type) {
+      dynamicText.innerHTML = contentMap[type];
+    }
+
+    // Buttons below content
+    document.getElementById('btn-bachelor').addEventListener('click', () => setContent('bachelor'));
+    document.getElementById('btn-master').addEventListener('click', () => setContent('master'));
+    document.getElementById('btn-contacts').addEventListener('click', () => setContent('contacts'));
+    
+
+    // Dropdown arrow menu
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = item.getAttribute('data-target');
+        setContent(target);
+      });
+    });
+  });
+</script>
+{% endblock %}
