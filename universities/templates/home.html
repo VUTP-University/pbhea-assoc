@@ -78,56 +78,86 @@
     const dynamicText = document.getElementById('dynamic-text');
  const contentMap = {
   home: `
-    <h2 class="text-center mb-4 fw-bold text-white">Welcome to PBHEA</h2>
-    <p class="lead text-center text-white">The Association “Positioning Bulgarian Higher Education Abroad” (PBHEA) was established with the mission to promote and enhance the prestige and quality of Bulgarian higher education on the international stage.</p>
-    <p class="text-center text-white">We unite the efforts of leading Bulgarian higher education institutions and their partners to:</p>
-    <ul class="text-center list-unstyled fw-medium text-white">
-      <li>➤ Build a positive and recognizable image of Bulgaria as an educational destination</li>
-      <li>➤ Support the export of Bulgarian higher education through international programs and initiatives</li>
-      <li>➤ Facilitate the attraction of international students and the creation of academic partnerships</li>
-      <li>➤ Actively participate in national and European policies in the field of education and science</li>
-    </ul>
-    <p class="text-center mt-4 text-white">The association is an independent and expert platform serving as a bridge between higher education, government institutions, business, and international partners.</p>
-    <p class="text-center text-white"><strong>Our vision:</strong> for Bulgaria to become a global leader in accessible, high-quality, and innovative higher education.</p>
-    <div class="text-center mt-4">
-      <p class="text-center text-white">Join us in this mission!</p>
-    </div>
-  `,
-
+  <h2 class="text-center mb-4 fw-bold text-white">Welcome to PBHEA</h2>
+  <p class="lead text-center text-white">
+    The Association “Positioning Bulgarian Higher Education Abroad” (PBHEA)
+    was established with the mission to promote and enhance the prestige
+    and quality of Bulgarian higher education on the international stage.
+  </p>
+  <p class="text-center text-white">
+    We unite the efforts of leading Bulgarian higher education institutions
+    and their partners to:
+  </p>
+  <ul class="text-center list-unstyled fw-medium text-white">
+    <li>➤ Build a positive and recognizable image of Bulgaria as an educational destination</li>
+    <li>➤ Support the export of Bulgarian higher education through international programs and initiatives</li>
+    <li>➤ Facilitate the attraction of international students and the creation of academic partnerships</li>
+    <li>➤ Actively participate in national and European policies in the field of education and science</li>
+  </ul>
+  <p class="text-center mt-4 text-white">
+    The association is an independent and expert platform serving as a bridge
+    between higher education, government institutions, business, and international
+    partners.
+  </p>
+  <p class="text-center text-white">
+    <strong>Our vision:</strong> for Bulgaria to become a global leader in
+    accessible, high-quality, and innovative higher education.
+  </p>
+  <div class="text-center mt-4">
+    <p class="text-center text-white">Join us in this mission!</p>
+  </div>
+`,
   bachelor: `
     <h2 class="text-center mb-4 fw-bold text-white">Bachelor Programmes - Admission Documents</h2>
     <ul class="list-unstyled fw-medium text-white">
-      <li>➤ Application form - completed, printed from the e-application system, and signed by the applicant.</li>
-      <li>➤ Validation of secondary education certificate, issued by the Regional Department of the Ministry of Education.</li>
-      <li>➤ A secondary-school-leaving certificate including marks in Biology and Chemistry (min. 62% of max score).</li>
-      <li>➤ Certificate of eligibility to enter university in the applicant's home country, translated and legalized.</li>
-      <li>➤ Name change document (if applicable), translated and legalized.</li>
-      <li>➤ Four (4) recently taken color passport-sized photos.</li>
-      <li>➤ Copy of ID or international passport.</li>
-      <li>➤ English language certificate at B2 level or higher (if from non-English-speaking country).</li>
+      <li>➤ Application form – completed, printed from the e-application system, and signed by the applicant.</li>
+      <li>➤ Validation of secondary education certificate, equalizing the secondary school leaving certificate’s achievements of the candidate to the Bulgarian educational system, issued by the Regional Department of the Bulgarian Ministry of Education.</li>
     </ul>
-    <a>
-    <p class="text-center mt-3 text-white"><strong>Note:</strong> Validation may take up to 1 month. Follow legalization requirements strictly.</p>
+    <p class="text-white"><strong>IMPORTANT!</strong> The application for obtaining a Validation of secondary education certificate is to be made directly to any Regional Department of the Ministry of Education:</p>
+    <ul class="list-unstyled ps-3 text-white">
+      <li>➤ Regional Department of Education contacts</li>
+      <li>➤ Legalization</li>
+    </ul>
+    <p class="text-white">Please keep in mind that the process takes <strong>up to a month</strong> after submitting the documents according to the requirements!</p>
+    <ul class="list-unstyled fw-medium text-white">
+      <li>➤ A secondary-school-leaving certificate with statement of marks including the subjects of Biology and Chemistry. The average mark in Biology and Chemistry should be equal or higher than 62% of the possible maximum in the country. The certificate should be translated into Bulgarian language and legalized by the respective authorities in the country where it had been issued.</li>
+      <li>➤ A certificate stating that the applicant has the right (is eligible) to continue his/her education in a university in his/her country, translated and legalized in the above mentioned way.</li>
+      <li>➤ If the name of the applicant on any of the application documents (high school diploma or higher education eligibility letter) differs from the name in the applicant’s passport, a document confirming the change of the name(s) – a name affidavit – must be submitted along with the rest of the required application documents. This document should be translated and legalized in the above way.</li>
+      <li>➤ Four (4) recently taken color photos (passport size).</li>
+      <li>➤ Copy of the ID or international passport of the candidate.</li>
+      <li>➤ An English certificate at level B2 or above for candidates coming from countries where English is not official.</li>
+    </ul>
+    <div class="text-center mt-3">
+      <a href="https://www.utp.bg/en/training/curricula/" class="btn btn-primary rounded-pill px-4">Computer technologies</a>
+    </div>
   `,
 
   master: `
-    <h2 class="text-center mb-4 fw-bold text-white">Master Programmes - Required Documents</h2>
+    <h2 class="text-center mb-4 fw-bold text-white">
+      Master Programmes - Required Documents
+    </h2>
     <ul class="list-unstyled fw-medium text-white">
-      <li>➤ Application form (template provided)</li>
-      <li>➤ Copy of higher education diploma and transcript — translated and legalized</li>
-      <li>➤ Official recognition from NACID: <a href="https://nacid.bg/bg/foreign_qualifications_in_bulgaria_b_m/info/" target="_blank" class="text-white text-decoration-underline">nacid.bg</a></li>
-      <li>➤ Language certificate: B2 in Bulgarian or equivalent in foreign language</li>
-      <li>➤ Copy of identity document (passport)</li>
-      <li>➤ Copy of citizenship documents (if dual citizenship)</li>
-      <li>➤ Two passport-sized photos</li>
-      <li>➤ Proof of payment of application fee</li>
-      <li>➤ Documents must be legalized, translated, and certified per Bulgarian/international law</li>
+      <li>➤ Application form (template provided);</li>
+      <li>➤ Copy of higher education diploma and transcript of records, translated and legalized as per the applicable procedures;</li>
+      <li>➤ Official statement of recognition of foreign higher education issued by the National Center for Information and Documentation (NACID): <a href="https://nacid.bg/bg/foreign_qualifications_in_bulgaria_b_m/info/" target="_blank" class="text-white text-decoration-underline">nacid.bg</a>;</li>
+      <li>➤ Certificate of Bulgarian language proficiency at level B2 (Common European Framework of Reference), issued by a Bulgarian higher education institution, or an internationally recognized certificate for proficiency in the relevant foreign language — for applicants who will not attend a preparatory language course;</li>
+      <li>➤ Copy of an identity document (passport);</li>
+      <li>➤ Copy of citizenship documents — for applicants with dual citizenship, one of which is Bulgarian;</li>
+      <li>➤ Two passport-size photos;</li>
+      <li>➤ Proof of payment of the application fee.</li>
     </ul>
-    <p class="text-center mt-3 text-white">If the applicant doesn’t speak Bulgarian, a preparatory course is required. Tuition fees are set annually.</p>
-  `,
+    <p class="text-white">
+      The documents listed must be legalized, translated into Bulgarian, and certified in accordance with international treaties between Bulgaria and the issuing country, or—if no such treaty exists—following the general legal requirements for legalization, translation, and certification of official documents.
+    </p>
+    <p class="text-white">
+      Foreign nationals who do not speak Bulgarian must attend a preparatory course in language and specialized training. Upon successful completion of exams in Bulgarian language (level B2 under the Common European Framework) and in the relevant specialized subjects, a certificate approved by the Ministry of Education and Science will be issued, which is required for enrollment in the first year of studies.
+    </p>
+    <p class="text-white">
+      Tuition fees for foreign students are determined annually by a decision of the Council of Ministers.
+    </p>`,
 
   contacts: `
-    <h2 class="text-center mb-4 fw-bold text-white">📬 Contact Us</h2>
+    <h2 class="text-center mb-4 fw-bold text-white">Contact Us</h2>
     <ul class="list-unstyled text-center fw-medium text-white">
       <li>➤ Email: <a href="mailto:admissions@utp.bg" class="text-white text-decoration-underline">admissions@utp.bg</a></li>
       <li>➤ Phone: +359 2 123 4567</li>
