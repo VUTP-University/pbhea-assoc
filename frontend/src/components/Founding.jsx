@@ -1,4 +1,9 @@
 import React from "react";
+import logoUTP from "../../src/assets/logo_utp.png";
+import logoMGU from "../../src/assets/logo_mgu.png";
+import logoMU from "../../src/assets/logo_mu.png";
+import logoAU from "../../src/assets/logo_au.png";
+
 
 const cards = [
   {
@@ -8,7 +13,7 @@ const cards = [
       "Actively involved in innovation, entrepreneurship, and cooperation with business and government.",
       "Known for international partnerships and EU project participation.",
     ],
-    image: "/src/assets/img/logo_utp.png",
+    image: logoUTP,
     url: "https://www.utp.bg/en/",
   },
   {
@@ -18,7 +23,7 @@ const cards = [
       "Pioneer in geoscience education and applied research with a growing global footprint.",
       "Focused on sustainable development and digital transformation in resource management.",
     ],
-    image: "/src/assets/img/logo_mgu.png",
+    image: logoMGU,
     url: "https://www.mgu.bg/en/",
   },
   {
@@ -28,7 +33,7 @@ const cards = [
       "Offers English-taught programs in Medicine and Healthcare attracting international students.",
       "Recognized for its robotic surgery training center and digital health research.",
     ],
-    image: "/src/assets/img/logo_mu.png",
+    image: logoMU,
     url: "https://www.mu-pleven.bg/index.php/en/",
   },
   {
@@ -38,7 +43,7 @@ const cards = [
       "Strong emphasis on biotechnology, agribusiness, climate-smart agriculture, and food innovation.",
       "Promotes international mobility, green transition, and sustainable food systems.",
     ],
-    image: "/src/assets/img/logo_au.png",
+    image: logoAU,
     url: "https://www.au-plovdiv.bg/en/",
   },
 ];

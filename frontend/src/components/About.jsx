@@ -1,11 +1,12 @@
 import React from 'react';
+import logoPBHEA from '../../src/assets/logo_pbhea.png';
 
 const About = () => {
   return (
     <div className="bg-white w-full p-8 rounded-2xl shadow-lg text-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
         <img
-          src="src/assets/img/logo_pbhea.png"
+          src={logoPBHEA}
           alt="PBHEA Logo"
           className="w-full mx-auto object-contain rounded-lg"
         />

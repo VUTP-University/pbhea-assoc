@@ -1,7 +1,16 @@
-from flask import Flask, Blueprint, jsonify
+from flask import Flask, Blueprint, jsonify, send_from_directory
 import pandas as pd
+import os
 
 main_bp = Blueprint('main', __name__)
+
+@main_bp.route('/')
+def serve_frontend():
+    return send_from_directory(os.path.join(os.getcwd(), 'frontend_dist'), 'index.html')
+
+@main_bp.route('/<path:path>')
+def serve_static_files(path):
+    return send_from_directory(os.path.join(os.getcwd(), 'frontend_dist'), path)
 
 @main_bp.route('/api/programs', methods=['GET'])
 def get_programs():
