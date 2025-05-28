@@ -39,3 +39,13 @@ ENV PYTHONUNBUFFERED=1
 
 # Start Flask app with Gunicorn (prod server)
 CMD ["gunicorn", "app:create_app()", "-b", "0.0.0.0:5000"]
+
+
+# =========================
+# Metadata
+# =========================
+LABEL org.opencontainers.image.title="PBHEA Association Fullstack App"
+LABEL org.opencontainers.image.version="1.0.1"
+LABEL org.opencontainers.image.authors="Mariqn Karastoyanov <mariqn.karastoyanov@gmail.com>"
+LABEL org.opencontainers.image.source="https://github.com/VUTP-University/pbhea-assoc"
+LABEL org.opencontainers.image.licenses="GNI GPLv3.0"
