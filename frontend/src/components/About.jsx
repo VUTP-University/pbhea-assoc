@@ -12,7 +12,7 @@ const About = () => {
         />
         <div className="text-left">
           <p className="text-gray-700 text-lg leading-relaxed">
-            The Association “Positioning Bulgarian Higher Education Abroad” (PBHEA) was established with the mission to promote and enhance the prestige and quality of Bulgarian higher education on the international stage.
+            The "Positioning Bulgarian Higher Education Abroad" Association (PBHEA) was established with the mission to promote and enhance the prestige and quality of Bulgarian higher education on the international stage.
             <br /><br />
             We unite the efforts of leading Bulgarian higher education institutions and their partners to:
             <br />• Build a positive and recognizable image of Bulgaria as an educational destination;
