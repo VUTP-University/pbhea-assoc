@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Founding from '../components/Founding';
 import SpecialtiesTab from '../components/SpecialtiesTab';
 import About from '../components/About';
+import EmailForm from '../components/EmailForm';
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -11,6 +12,8 @@ const Home = () => {
     { id: 'bachelor', label: 'Bachelor' },
     { id: 'master', label: 'Master' },
     { id: 'doctor', label: 'Doctor' },
+    { id: 'email', label: 'Email' },
+    
     { id: 'about', label: 'About' },
   ];
 
@@ -26,6 +29,8 @@ const Home = () => {
         return <SpecialtiesTab level="doctor" />;
       case 'about':
         return <About />;
+      case 'email':
+        return <EmailForm  level="email"/>;
       default:
         return <About />;
     }
