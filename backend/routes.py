@@ -1,6 +1,10 @@
-from flask import Flask, Blueprint, jsonify, send_from_directory
+from flask import Blueprint, jsonify, send_from_directory, request
+import mailtrap as mt
 import pandas as pd
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 main_bp = Blueprint('main', __name__)
 
@@ -48,4 +52,31 @@ def get_programs():
             })
 
     return jsonify(result)
-    
+
+@main_bp.route('/api/send_email', methods=['POST'])
+def send_email():
+    print("Received request to send email")
+    try:
+        data = request.json
+        sender = data.get('sender')
+        subject = data.get('subject')
+        receiver_email = data.get('receiver_email')
+        email_body = data.get('email_body')
+
+        mail = mt.Mail(
+            sender=mt.Address(email=sender),
+            to=[mt.Address(email=receiver_email)],
+            subject=f'{subject} - PBHEA Contact Form',
+            category="PBHEA Contact Form",
+            text=email_body
+        )
+        print(f"Sending email from {sender} to {receiver_email} with subject '{subject}'")
+
+        token = os.getenv("MAILTRAP_TOKEN")
+        client = mt.MailtrapClient(token=token)
+        print("MAILTRAP_TOKEN =", token) 
+        client.send(mail)
+
+        return jsonify({"status": "success", "message": "Email sent successfully"}), 200
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
