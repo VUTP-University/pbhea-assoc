@@ -72,16 +72,13 @@ def send_email():
         )
 
         token = os.getenv("MAILTRAP_TOKEN")
-        print("Using Mailtrap token:", token)
         if not token:
             raise Exception("MAILTRAP_TOKEN is not set in environment")
 
         client = MailtrapClient(token=token)
         response = client.send(mail)
-        print("Mailtrap Response:", response)
 
         return jsonify({"status": "success", "message": "Email sent successfully"}), 200
 
     except Exception as e:
-        print("Error sending email:", e)
         return jsonify({"status": "error", "message": str(e)}), 500
