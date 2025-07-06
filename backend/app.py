@@ -4,8 +4,8 @@ from flask_cors import CORS
 def create_app():
     app = Flask(__name__)
 
-    CORS(app , origins="*")
-    # CORS(app, resources={r"/api/*": {"origins": "*"}})
+    # CORS(app , origins="*")
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
 
     from routes import main_bp
     app.register_blueprint(main_bp)
