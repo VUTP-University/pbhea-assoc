@@ -177,6 +177,6 @@ cython_debug/
 *.env
 
 # Ignore local files
-/backend/programs.xlsx
+/backend/*.xlsx
 .DS_Store
-/docs/
+**/docs/
