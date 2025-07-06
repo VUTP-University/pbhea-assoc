@@ -172,3 +172,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore env variables file
+*.env
+
+# Ignore local files
+/backend/programs.xlsx
+.DS_Store
+/docs/
