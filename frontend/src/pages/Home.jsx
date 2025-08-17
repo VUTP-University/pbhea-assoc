@@ -38,7 +38,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen py-10 px-4 bg-gradient-to-br from-[#163A64] to-[#1e4b85]">
-      <h1 className="text-4xl font-bold text-center mb-6 primary_text">"Positioning Bulgarian Higher Education Abroad" Association (PBHEA) </h1>
+      <h1 className="text-4xl font-bold text-center mb-6 primary_text">Positioning Bulgarian Higher Education Abroad Association (PBHEA) </h1>
 
       {/* Tab Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-8">

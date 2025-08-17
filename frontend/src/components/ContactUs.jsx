@@ -1,8 +1,37 @@
 import React, { useState } from "react";
 
+// Environment variables for university emails
+const AGU_EMAIL = import.meta.env.VITE_AGU_EMAIL;
+const MU_PLEVEN_EMAIL = import.meta.env.VITE_MU_EMAIL;
+const UTP_SOFIA_EMAIL = import.meta.env.VITE_UTP_EMAIL;
+const UMG_EMAIL = import.meta.env.VITE_UMG_EMAIL;
+
+const universities = [
+  {
+    id: "agricultural-university-plovdiv",
+    name: "Agricultural University – Plovdiv",
+    email: AGU_EMAIL,
+  },
+  {
+    id: "medical-university-pleven",
+    name: "Medical University of Pleven",
+    email: MU_PLEVEN_EMAIL,
+  },
+  {
+    id: "utp-sofia",
+    name: "University of Telecommunications and Post (UTP), Sofia",
+    email: UTP_SOFIA_EMAIL,
+  },
+  {
+    id: "umg-sofia",
+    name: "University of Mining and Geology “St. Ivan Rilski”, Sofia",
+    email: UMG_EMAIL,
+  },
+];
+
 const ContactUsForm = () => {
   const [formData, setFormData] = useState({
-    university: "",
+    universityId: "",
     email: "",
     subject: "",
     message: "",
@@ -10,20 +39,25 @@ const ContactUsForm = () => {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
-
-  const handleSelectChange = (e) => {
-    setFormData({ ...formData, university: e.target.value });
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const selectedUniversity = universities.find(
+      (uni) => uni.id === formData.universityId
+    );
+
+    if (!selectedUniversity) {
+      alert("Please select a valid university.");
+      return;
+    }
+
     const payload = {
       sender: formData.email,
-      receiver_email: "karastoqnov.alexandar@gmail.com",
-      subject: `${formData.subject} - ${formData.university}`,
+      receiver_email: selectedUniversity.email,
+      subject: `${formData.subject} - ${selectedUniversity.name}`,
       email_body: formData.message,
     };
 
@@ -37,9 +71,9 @@ const ContactUsForm = () => {
         },
         body: JSON.stringify(payload),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         alert(data.message);
       } else {
@@ -54,32 +88,42 @@ const ContactUsForm = () => {
   return (
     <div className="mx-auto w-full bg-white rounded-xl shadow-md p-8">
       <form className="space-y-3" onSubmit={handleSubmit}>
-        {/* Dropdown menu */}
-        <div className="flex gap-2 mb-2">
+        {/* University Dropdown */}
+        <div>
+          <label
+            htmlFor="universityId"
+            className="block text-gray-700 font-medium mb-1"
+          >
+            Select University
+          </label>
           <select
-            id="university"
+            id="universityId"
             required
-            value={formData.university}
-            onChange={handleSelectChange}
+            value={formData.universityId}
+            onChange={handleChange}
             className="px-4 py-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
           >
             <option value="" disabled>
               Select University
             </option>
-            <option value="University of Telecommunications and Post (UTP), Sofia">
-              University of Telecommunications and Post (UTP), Sofia
-            </option>
-            <option value="University of Mining and Geology “St. Ivan Rilski”, Sofia">
-              University of Mining and Geology “St. Ivan Rilski”, Sofia
-            </option>
-            <option value="Medical University of Pleven">
-              Medical University of Pleven
-            </option>
-            <option value="Agricultural University – Plovdiv">
-              Agricultural University – Plovdiv
-            </option>
+            {universities.map((uni) => (
+              <option key={uni.id} value={uni.id}>
+                {uni.name}
+              </option>
+            ))}
           </select>
         </div>
+
+        {/* Display recipient email */}
+        {formData.universityId && (
+          <p className="text-sm text-gray-500 mb-4">
+            Email will be sent to:{" "}
+            {
+              universities.find((uni) => uni.id === formData.universityId)
+                ?.email
+            }
+          </p>
+        )}
 
         {/* Email Field */}
         <div>
@@ -137,8 +181,6 @@ const ContactUsForm = () => {
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
           ></textarea>
         </div>
-
-        {/* File upload is ignored for now since backend does not support it */}
 
         {/* Submit Button */}
         <div className="text-center">
