@@ -30,8 +30,8 @@ const About = () => {
                 <div className="mt-6 text-gray-800 text-md leading-relaxed bg-gray-50 p-4 rounded-md shadow">
             <p className="text-lg font-medium">📬 Need Assistance?</p>
             <p>For questions or guidance, contact us at:</p>
-            <p>📧 <a href="mailto:admissions@utp.bg" className="text-blue-700 hover:underline">admissions@utp.bg</a></p>
-            <p>📞 +359 2 123 4567</p>
+            <p>📧 <a href="mailto:admission@utp.bg" className="text-blue-700 hover:underline">admission@utp.bg</a></p>
+            <p>📞 +359 8880793781</p>
           </div>
     </div>
     
