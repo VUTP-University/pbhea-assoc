@@ -11,7 +11,7 @@ const About = () => {
           className="w-full mx-auto object-contain rounded-lg"
         />
         <div className="text-left">
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-gray-700 text-lg leading-relaxed text-justify">
             The "Positioning Bulgarian Higher Education Abroad" Association (PBHEA) was established with the mission to promote and enhance the prestige and quality of Bulgarian higher education on the international stage.
             <br /><br />
             We unite the efforts of leading Bulgarian higher education institutions and their partners to:
