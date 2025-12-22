@@ -7,9 +7,18 @@ const SpecialtiesTab = ({ level }) => {
   const BACKEND_API = import.meta.env.VITE_BACKEND_API;
 
   useEffect(() => {
-    fetch(`${BACKEND_API}/api/programs`)
-      .then(res => res.json())
-      .then(data => setSpecialties(data[level] || []));
+    fetch("/api/programs")
+  .then(async res => {
+    const text = await res.text();   // <-- get raw text
+    console.log("Raw response:", text);
+    try {
+      const data = JSON.parse(text); // try parsing manually
+      setSpecialties(data[level] || []);
+    } catch(e) {
+      console.error("JSON parse failed:", e);
+    }
+  })
+  .catch(err => console.error("Fetch error:", err));
   }, [level]);
 
   return (
