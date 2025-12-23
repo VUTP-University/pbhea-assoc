@@ -71,14 +71,8 @@ def send_email():
             category="PBHEA Contact Form",
             text=email_body,
         )
-        print("Sending email with the following details:")
-        print(f"Sender: {sender}")
-        print(f"Receiver: {receiver_email}")
-        print(f"Subject: {subject}")
-        print(f"Body: {email_body}")
 
         token = os.getenv("MAILTRAP_TOKEN")
-        print("Using MAILTRAP_TOKEN:", token)
         if not token:
             raise Exception("MAILTRAP_TOKEN is not set in environment")
 
