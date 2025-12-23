@@ -7,7 +7,7 @@ const SpecialtiesTab = ({ level }) => {
   const BACKEND_API = import.meta.env.VITE_BACKEND_API;
 
   useEffect(() => {
-    fetch("/api/programs")
+    fetch(`${BACKEND_API}/api/programs`)
   .then(async res => {
     const text = await res.text();   // <-- get raw text
     console.log("Raw response:", text);

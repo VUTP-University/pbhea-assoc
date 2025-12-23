@@ -114,17 +114,6 @@ const ContactUsForm = () => {
           </select>
         </div>
 
-        {/* Display recipient email */}
-        {formData.universityId && (
-          <p className="text-sm text-gray-500 mb-4">
-            Email will be sent to:{" "}
-            {
-              universities.find((uni) => uni.id === formData.universityId)
-                ?.email
-            }
-          </p>
-        )}
-
         {/* Email Field */}
         <div>
           <label

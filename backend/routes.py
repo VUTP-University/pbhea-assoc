@@ -3,6 +3,7 @@ from mailtrap import MailtrapClient, Mail, Address
 import pandas as pd
 import os
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
 
@@ -64,14 +65,20 @@ def send_email():
         email_body = data.get('email_body')
 
         mail = Mail(
-            sender=Address(email="support@stratios.net", name=sender),
+            sender=Address(email="info@pbhea.education", name=sender),
             to=[Address(email=receiver_email)],
             subject=f'{subject} - PBHEA Contact Form',
             category="PBHEA Contact Form",
             text=email_body,
         )
+        print("Sending email with the following details:")
+        print(f"Sender: {sender}")
+        print(f"Receiver: {receiver_email}")
+        print(f"Subject: {subject}")
+        print(f"Body: {email_body}")
 
         token = os.getenv("MAILTRAP_TOKEN")
+        print("Using MAILTRAP_TOKEN:", token)
         if not token:
             raise Exception("MAILTRAP_TOKEN is not set in environment")
 
@@ -81,4 +88,5 @@ def send_email():
         return jsonify({"status": "success", "message": "Email sent successfully"}), 200
 
     except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
+        logging.error("Error sending email: %s", str(e))
+        return jsonify({"msg": "Failed to send email"}), 500

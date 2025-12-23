@@ -1,11 +1,24 @@
 from flask import Flask
 from flask_cors import CORS
+import logging
 
 def create_app():
     app = Flask(__name__)
+    
+    logging.basicConfig(level=logging.INFO)
+    logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
     # CORS(app , origins="*")
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    CORS(
+    app,
+    resources={r"/api/*": {
+        "origins": [
+            "http://localhost:5173",
+            "http://pbhea.education",
+            "https://pbhea.education"
+        ]
+    }}
+)
 
     from routes import main_bp
     app.register_blueprint(main_bp)
